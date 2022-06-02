@@ -1,0 +1,23 @@
+package testsel;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class testmain {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		String url ="https://responsivefight.herokuapp.com/";
+		WebDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get(url);
+		pagecls page = new pagecls(driver);
+		Thread.sleep(2000);
+		page.register("uname1","pword1");
+		page.login("uname1","pword1");
+		page.strgame();
+		page.end();
+	
+	}
+
+}
